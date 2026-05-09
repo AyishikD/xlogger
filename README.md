@@ -32,6 +32,8 @@ We provide several example scripts to demonstrate ModelLogger's capabilities:
 2. **Failing (Divergence)**: `python examples/failing_train.py`
 3. **BF16 Overflow**: `python examples/bf16_overflow.py`
 4. **Tokenizer Regression**: `python examples/tokenizer_regression.py`
+5. **Real HF Training**: `python examples/real_hf_train.py` (Autonomous recovery with GPT-2)
+6. **Vanilla Training**: `python examples/vanilla_train.py` (Unprotected baseline)
 
 Run these scripts to populate the organizational memory and trigger live cognition alerts.
 
