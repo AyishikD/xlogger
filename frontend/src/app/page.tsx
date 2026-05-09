@@ -71,10 +71,6 @@ export default function LandingPage() {
               Automatically detect divergence, rollback unstable updates, and recover training runs without manual intervention.
             </p>
             <div className="flex flex-wrap gap-5">
-              <Link href="https://github.com" className="px-8 py-4 bg-white border border-[#E8E2D9] text-[#1A1A1A] font-bold rounded-2xl flex items-center gap-3 hover:bg-[#F3EFE7] transition-all shadow-sm">
-                <Github className="w-5 h-5 text-[#333333]" />
-                View GitHub
-              </Link>
             </div>
           </motion.div>
 
