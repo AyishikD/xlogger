@@ -48,7 +48,7 @@ export default function LearningsPage() {
               <div className="text-slate-500 py-10">Evolving research memory...</div>
             ) : learnings.length > 0 ? (
               learnings.map((learning, i) => (
-                <LearningCard 
+                <LearningCard
                   key={i}
                   type={learning.metadata_json?.type || "INSIGHT"}
                   title={learning.title}
@@ -72,7 +72,7 @@ export default function LearningsPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent pointer-events-none" />
               Learning graph visualization available after 5+ experiments.
             </div>
-            
+
             <div className="glass p-6 rounded-2xl">
               <h4 className="font-bold mb-4 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-accent" /> Recent Updates
@@ -111,7 +111,7 @@ export default function LearningsPage() {
               ))}
             </div>
 
-            <button 
+            <button
               onClick={() => setSelectedLearning(null)}
               className="w-full py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-colors"
             >
@@ -140,18 +140,18 @@ function LearningCard({ type, title, confidence, description, actions, onShowAct
       <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
         <Brain className="w-16 h-16" />
       </div>
-      
+
       <div className="flex items-center gap-3 mb-4">
         <span className="text-[10px] font-bold px-2 py-0.5 bg-primary/10 text-primary rounded border border-primary/20">
           {type}
         </span>
         <span className="text-[10px] font-bold text-slate-500">Confidence: {(confidence * 100).toFixed(0)}%</span>
       </div>
-      
+
       <h4 className="text-lg font-bold mb-3">{title}</h4>
       <p className="text-sm text-slate-400 mb-6">{description}</p>
-      
-      <button 
+
+      <button
         onClick={onShowActions}
         className="flex items-center gap-2 text-xs font-bold text-secondary hover:text-secondary-light transition-colors group/btn"
       >

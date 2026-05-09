@@ -34,7 +34,7 @@ export default function GraphPage() {
           <p className="text-xs text-slate-500">Visualizing causal links and learning evolution across experiments.</p>
         </div>
       </header>
-      
+
       <div className="flex-1 relative">
         <ReactFlow
           nodes={nodes}

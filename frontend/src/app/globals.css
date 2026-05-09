@@ -8,16 +8,36 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: 'Inter', sans-serif;
+}
+
+/* Recallix Light Luxury Utilities */
+.recallix-glass {
+  background: rgba(255, 253, 249, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 226, 217, 0.5);
+}
+
+.recallix-shadow {
+  box-shadow: 0 10px 40px -10px rgba(166, 137, 102, 0.1);
+}
+
+.recallix-card {
+  background: #FFFDF9;
+  border: 1px solid #E8E2D9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.grid-light-bg {
+  background-image: radial-gradient(#E8E2D9 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .glass {
     background: rgba(30, 41, 59, 0.4);
     backdrop-filter: blur(12px);
