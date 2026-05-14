@@ -50,6 +50,7 @@ class ReliabilityHook:
         self.lr_floor = 1e-6
         self.pending_outcome = None 
         self.avg_loss = 0.0 # Running average for outlier detection
+        self.recovery_steps = 0
 
     async def log_and_intervene(self, optimizer, loss, step, model):
         if not self.experiment_id: self.experiment_id = self.logger.experiment_id

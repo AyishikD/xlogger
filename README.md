@@ -1,6 +1,6 @@
 # ModelLogger: Research Memory OS for AI/ML Teams
 
-ModelLogger is a persistent Research Memory OS designed to capture and structure research activity into a persistent memory graph.
+ModelLogger is a persistent Research Memory OS designed to capture, organize, and structure machine learning research activity into a dynamic organizational memory graph.
 
 ## Tech Stack
 - **Backend**: FastAPI, SQLAlchemy 2.0 (Async), PostgreSQL + pgvector, Redis, Pydantic v2
@@ -8,38 +8,53 @@ ModelLogger is a persistent Research Memory OS designed to capture and structure
 - **Infra**: Docker, Docker Compose
 
 ## Project Structure
-```
-app/
-  api/          # API routes
-  core/         # Configuration and utilities
-  db/           # Database session and base classes
-  models/       # SQLAlchemy models
-  schemas/      # Pydantic schemas
-  services/     # Business logic (e.g., embeddings)
-  repositories/ # Data access layer
-  workers/      # Background task handlers
-  ingestion/    # Logic for raw data ingestion
-  retrieval/    # Search and retrieval logic
-  events/       # Event definitions and handling
-  utils/        # Common utilities
+```text
+├── app/               # FastAPI Backend Application
+│   ├── agents/        # Autonomous agents & resolution workflows
+│   ├── api/           # REST API routes (v1 endpoints)
+│   ├── core/          # Configuration & Redis setup
+│   ├── db/            # Database sessions & base models
+│   ├── embeddings/    # Vector embedding generation services
+│   ├── events/        # Memory event extractors & definitions
+│   ├── ingestion/     # Logic for raw data ingestion
+│   ├── models/        # SQLAlchemy database models
+│   ├── repositories/  # Data access layer
+│   ├── retrieval/     # Semantic search & retrieval engine
+│   ├── schemas/       # Pydantic validation schemas
+│   ├── services/      # Core logic (root cause engine, summarizer)
+│   ├── utils/         # Common helper utilities
+│   ├── websockets/    # Live real-time cognition streaming manager
+│   └── workers/       # Background task synthesis handlers
+├── frontend/          # Next.js Application Dashboard
+├── sdk/               # Python Client SDK (modellogger)
+├── examples/          # Example ML training workflows showcasing anomalies
+├── migrations/        # Alembic database migrations
+└── scripts/           # Operational helper scripts
 ```
 
 ## Example Training Workflows
 
-We provide several example scripts to demonstrate ModelLogger's capabilities:
+We provide several example scripts demonstrating ModelLogger's cognitive telemetry and autonomous recovery capabilities.
+
+> [!IMPORTANT]
+> To run the examples locally, ensure the SDK is included in your Python path by setting `PYTHONPATH`:
+> ```bash
+> export PYTHONPATH=$PYTHONPATH:./sdk/python
+> ```
 
 1. **Stable Training**: `python examples/stable_train.py`
 2. **Failing (Divergence)**: `python examples/failing_train.py`
 3. **BF16 Overflow**: `python examples/bf16_overflow.py`
 4. **Tokenizer Regression**: `python examples/tokenizer_regression.py`
 5. **Real HF Training**: `python examples/real_hf_train.py` (Autonomous recovery with GPT-2)
-6. **Vanilla Training**: `python examples/vanilla_train.py` (Unprotected baseline)
+6. **PyTorch Real Model**: `python examples/pytorch_real_model.py` (Automated anomaly detection via PyTorch auto-hooking)
+7. **Vanilla Training**: `python examples/vanilla_train.py` (Unprotected baseline)
 
-Run these scripts to populate the organizational memory and trigger live cognition alerts.
+Run these scripts to populate organizational memory and trigger live cognition alerts on the dashboard.
 
 ## Frontend Dashboard
 
-A modern Next.js dashboard is provided for visualizing experiments and learnings.
+A modern Next.js dashboard is provided for visualizing experiments, active streams, and synthesized learnings.
 
 ### Prerequisites
 - Node.js 18+
@@ -73,10 +88,11 @@ docker-compose up --build
 ```
 
 ### 3. Database Migrations
+Apply existing database migrations to set up schema tables on your running containers:
 ```bash
-docker-compose exec backend alembic revision --autogenerate -m "Initial migration"
 docker-compose exec backend alembic upgrade head
 ```
+*(Note: To auto-generate new migrations after modifying SQLAlchemy models, use `docker-compose exec backend alembic revision --autogenerate -m "Description"`).*
 
 ## Key Endpoints
 - `POST /api/v1/memory/ingest`: Ingest a new research memory event.
